@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Code Review - Stammerer</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../Cpp/index.html"><strong aria-hidden="true">1.</strong> C++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Cpp/CodeReview.html" class="active"><strong aria-hidden="true">1.1.</strong> Code Review</a></li><li class="chapter-item expanded "><a href="../Cpp/Date/index.html"><strong aria-hidden="true">1.2.</strong> Date</a></li></ol></li><li class="chapter-item expanded "><a href="../Docker/READEM.html"><strong aria-hidden="true">2.</strong> Docker</a></li><li class="chapter-item expanded "><a href="../IDE/index.html"><strong aria-hidden="true">3.</strong> IDE</a></li><li class="chapter-item expanded "><a href="../Git/index.html"><strong aria-hidden="true">4.</strong> Git</a></li><li class="chapter-item expanded "><a href="../Screen/index.html"><strong aria-hidden="true">5.</strong> Screen</a></li><li class="chapter-item expanded "><a href="../SQLite/index.html"><strong aria-hidden="true">6.</strong> SQLite</a></li><li class="chapter-item expanded "><a href="../Ubuntu/index.html"><strong aria-hidden="true">7.</strong> Ubuntu</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Stammerer</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="code-review"><a class="header" href="#code-review">Code Review</a></h1>
+<h2 id="a-valuable--comprehensive-firmware-code-review-by-codethink"><a class="header" href="#a-valuable--comprehensive-firmware-code-review-by-codethink"><a href="https://www.codethink.co.uk/articles/2022/asl-testimonial/">A Valuable &amp; Comprehensive Firmware Code Review by Codethink</a></a></h2>
+<h3 id="what-is-the-point-of-this-code-review"><a class="header" href="#what-is-the-point-of-this-code-review">What is the point of this code review?</a></h3>
+<p>When performing a code review we should always ask ourselves what the point of the review actually is, and try to answer some basic questions.</p>
+<h3 id="who-is-the-target-audience-for-the-review"><a class="header" href="#who-is-the-target-audience-for-the-review">Who is the target audience for the review?</a></h3>
+<p>A <strong>junior</strong> developer may request a review as a learning experience, and would expect any response to be as verbose and educational as possible.</p>
+<p>A <strong>senior</strong> developer may request a review as a sanity check and will often expect a review to be as technically in-depth as possible to catch/discuss potential issues.</p>
+<p>A <strong>manager</strong> may request a review either directly or as part of a company process, in this case they will need a high level summary to provide them feedback on the overall code quality on the project and as a feedback mechanism to feed into any personal development programs.</p>
+<p>A <strong>company</strong> may request a review as part of an evidence chain for safety/security certification or approval, such a review would be expected to be as formal and verbose as possible as it will need to be referenced in the future.</p>
+<p>In practice all code reviews are a mixture of the above, and before undertaking a code review it’s important to gauge the audience as the wrong review focus or format could lead to a bad code review.</p>
+<p>In our work with ASL Holdings we were working to review their power monitoring devices for the purposes of both safety and quality. Since we knew the audience for this review from the start, it became clear that this review would need to be very technically in-depth and formal.</p>
+<h3 id="what-does-a-successful-review-look-like"><a class="header" href="#what-does-a-successful-review-look-like">What does a successful review look like?</a></h3>
+<p>Once we know the target audience it becomes easier to determine what results are expected. In some cases this may be covered by company process or by the request for the review, but it’s often worthwhile to directly ask the main stakeholders what they expect to get out of a code review.</p>
+<p>Typical expected outcomes from a code review can vary a lot, and include:</p>
+<ul>
+<li>Fixing known bugs</li>
+<li>Finding unknown bugs</li>
+<li>Describing potential maintenance issues</li>
+<li>Simplification of the codebase</li>
+<li>Providing optimizations</li>
+<li>Ensuring common conventions/styles are used</li>
+<li>Education/Feedback</li>
+</ul>
+<p>For a longer form review it’s often worthwhile to state the intentions of the review up-front as this will prepare the reader for what to expect from the review.</p>
+<h3 id="where-to-begin"><a class="header" href="#where-to-begin">Where to Begin?</a></h3>
+<p>For a small code review it can be obvious where to begin if there’s relatively little to tackle, but this question can be more tricky to answer for large projects/commits.</p>
+<p>In our work with ASL Holdings we were reviewing a mature codebase with a large number of C source and header files and no prior knowledge of the codebase. The lack of prior knowledge can be an important factor in providing an unbiased review and may be a requirement for safety, security or quality processes.</p>
+<p>A larger code review should always begin with a discussion with the original author where possible as they will be able to point out any areas of concern, any known issues or any concerns they have about the code in general.</p>
+<p>When digging into a large codebase it’s good to have a number of entry points as this can focus the mind, and once a high-level review of these areas is written the experience should allow for a wider understanding of the codebase.</p>
+<p>Due to the requirements for the ASL Holdings code review it became obvious early on that the only acceptable outcome would be to review every single line of code.</p>
+<p>Reading large quantities of code may seem daunting at first, however most codebases will have a relatively consistent style whether due to a specific code style being followed or just due to the limited number of authors. The important thing when tackling a large quantity of code is to keep very brief notes so as not to break your flow when reading through the codebase.</p>
+<p>For the ASL code review we kept very brief notes indicating line-number and a couple of words to describe each issue; by keeping minimal notes this allowed us to read through the codebase quickly without interruption. When it came time to write the formal review; using only these notes it was possible to work backwards and focus on specific parts of the codebase in the review itself.</p>
+<p>Reading through the codebase first also allows us to determine any recurring issues, and get a picture of how much time we’ll have available to dig into each review point.</p>
+<p>Understanding how much time we had to focus and think about specific issues was important as we could plan to provide the most in-depth feedback in the time given. This allowed us to provide very in-depth feedback for the most critical point by referencing appropriate technical documentation and providing code improvement snippets.</p>
+<h3 id="where-to-end"><a class="header" href="#where-to-end">Where to End?</a></h3>
+<p>By determining the audience, stakeholders and expectations of the review, it becomes easier to determine where the end-point should be.</p>
+<p>Typically a code review shouldn’t end until you have a full understanding of the reviewed codebase such that you can read and understand every function/file. Where this is not the case, the level of depth should be clearly mentioned in the code review.</p>
+<p>Often for shorter code reviews which may be part of a company commit process there’s a temptation to review briefly and accept a change, however if it’s not clear that this has been done, then bugs and technical debt can easily build up unnoticed.</p>
+<p>In the case of our review for ASL Holdings we knew that a review of the entire codebase was required for quality and safety purposes, so it became our obligation to review with a full understanding.</p>
+<p>While we had gathered requirements up-front to determine what a successful review might look like, it was important to leave some time for feedback to the code review as the output in our case was a formal document.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Cpp/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../Cpp/Date/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Cpp/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../Cpp/Date/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

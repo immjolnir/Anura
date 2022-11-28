@@ -1,0 +1,293 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Docker - Stammerer</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../Cpp/index.html"><strong aria-hidden="true">1.</strong> C++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Cpp/CodeReview.html"><strong aria-hidden="true">1.1.</strong> Code Review</a></li><li class="chapter-item expanded "><a href="../Cpp/Date/index.html"><strong aria-hidden="true">1.2.</strong> Date</a></li></ol></li><li class="chapter-item expanded "><a href="../Docker/READEM.html" class="active"><strong aria-hidden="true">2.</strong> Docker</a></li><li class="chapter-item expanded "><a href="../IDE/index.html"><strong aria-hidden="true">3.</strong> IDE</a></li><li class="chapter-item expanded "><a href="../Git/index.html"><strong aria-hidden="true">4.</strong> Git</a></li><li class="chapter-item expanded "><a href="../Screen/index.html"><strong aria-hidden="true">5.</strong> Screen</a></li><li class="chapter-item expanded "><a href="../SQLite/index.html"><strong aria-hidden="true">6.</strong> SQLite</a></li><li class="chapter-item expanded "><a href="../Ubuntu/index.html"><strong aria-hidden="true">7.</strong> Ubuntu</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Stammerer</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="docker"><a class="header" href="#docker">Docker</a></h1>
+<p>$ docker run -it stammerer:1.0.0 bash</p>
+<ul>
+<li>
+<p>MYSQL: <code>$ docker run -d -p 3306:3306 -name mysql01 -e MYSQL_ROOT_PASSWORD=123456 mysql:5.7.32</code></p>
+</li>
+<li>
+<p>Rabbitmq: <code>$ docker run -d -p 5672:5672 -name rabbitmq01</code></p>
+<ul>
+<li>5672 是 客户端与rabbitmq交互的端口号</li>
+<li>15672 是 客户端与rabbitmq Web页面交互的端口号</li>
+</ul>
+</li>
+<li>
+<p>nacos 镜像运行: <code>docker run -d --name ncos-standalone -e MODE=standalone -p 8848:8848 nacos/nacos-server:latest</code></p>
+</li>
+</ul>
+<h3 id="run-cmd-entrypoint"><a class="header" href="#run-cmd-entrypoint">RUN, CMD, ENTRYPOINT</a></h3>
+<ul>
+<li><strong>RUN</strong> 执行命令并创建新的镜像层，RUN 经常用于安装软件包，比如这里的 npm install；</li>
+<li><strong>CMD</strong> 设置容器启动后默认执行的命令及其参数，但 CMD 能够被 docker run 后面跟的命令行参数替换。</li>
+<li><strong>ENTRYPOINT</strong> 配置容器启动时运行的命令。</li>
+</ul>
+<h3 id="workdir"><a class="header" href="#workdir">WORKDIR</a></h3>
+<p><strong>WORKDIR</strong> creates the path if it doesn't exist and then changes the current directory to that path (same as <code>mkdir -p /path/new &amp;&amp; cd /path/new</code>)
+For example:</p>
+<pre><code>WORKDIR /Users/vaibmish/Documents/new/graph-report/graphreport_metrics
+</code></pre>
+<p>You can also declare the path as a volume and instruct who runs the container to provide their own path (<code>docker run -v host_path:container_path ...</code>)</p>
+<h3 id="volume"><a class="header" href="#volume">VOLUME</a></h3>
+<p>For example:</p>
+<pre><code>VOLUME /Users/vaibmish/Documents/new/graph-report
+</code></pre>
+<p>A final note: It looks like these paths are from the host. Remember that the paths in the Dockerfile are not host paths. They are paths inside the container.</p>
+<h3 id="暴露端口"><a class="header" href="#暴露端口">暴露端口</a></h3>
+<pre><code>    EXPOSE 3000
+</code></pre>
+<h3 id="image-转储"><a class="header" href="#image-转储">Image 转储</a></h3>
+<ul>
+<li>保存镜像为文件</li>
+</ul>
+<p>如果要讲镜像保存为本地文件，可以使用Docker save命令。</p>
+<pre><code>docker save -o 要保存的文件名  要保存的镜像
+</code></pre>
+<ul>
+<li>从文件载入镜像</li>
+</ul>
+<pre><code>docker load --input 文件
+	
+docker load &lt; 文件名
+</code></pre>
+<p>此时会导入镜像以及相关的元数据信息等</p>
+<h2 id="五个小技巧快速创建docker镜像"><a class="header" href="#五个小技巧快速创建docker镜像">五个小技巧，快速创建Docker镜像</a></h2>
+<p>毫无疑问，容器是DevOps世界一个突破性的技术。镜像创建对于部署和发布环节都非常重要。那么如何效率地创建和使用镜像来提升部署速度呢？以下是作者的经验和分享，大家不妨一试——</p>
+<ul>
+<li>
+<ol>
+<li>尽可能多地缓存网络下载</li>
+</ol>
+</li>
+</ul>
+<p>通常部署需要从Internet下载成百上千MB的数据。因此部署常受到网速慢或者断网的困扰。</p>
+<p>而缓存得越多，部署得就会越快。最终的目标是实现Docker镜像离线一键部署。</p>
+<ul>
+<li>
+<ol start="2">
+<li>把Docker镜像看做Plain OS Golden Image</li>
+</ol>
+</li>
+</ul>
+<p>Docker很强力，但是我们也有很多VM或者裸机部署。为了避免供应商锁定，通常需要选择是否用Docker支持部署，最好两种场景都实施部署持续集成。</p>
+<p>举例来说，如果使用kitchen来做持续集成。默认情况下，使用自定义Docker镜像来测试。当IMAGE_NAME指定为ubuntu:14.04时，可以很肯定ubuntu:14.04系统对于部署非常适用。</p>
+<ul>
+<li>
+<ol start="3">
+<li>审核Docker镜像里所有包和服务的安装</li>
+</ol>
+</li>
+</ul>
+<p>从镜像起一个Docker容器，然后列出并检查所有安装的包/服务。</p>
+<p>为什么要这么做？首先我们希望Docker镜像尽可能地小，镜像交付就会很快速。其次，包/服务越多，问题也会越多，例如包冲突，TCP端口占有问题。一些服务的安装后脚本甚至会改变关键性的全局配置文件或者留下不可预期的flagfile。所以最好让Docker镜像保持傻傻的单纯。</p>
+<ul>
+<li>
+<ol start="4">
+<li>Docker构建的最后清理关闭所有服务</li>
+</ol>
+</li>
+</ul>
+<p>如果不这么做，服务会在Docker镜像的最后阶段被杀掉。在/var/lock/*下的服务的lockfile如果没有被正确使用，当测试新建镜像的部署时，服务可能会启动失败，导致测试无效。</p>
+<ul>
+<li>
+<ol start="5">
+<li>添加验证步骤，确保镜像正常</li>
+</ol>
+</li>
+</ul>
+<p>当有改变发生时，我们时不时需要重构Docker镜像。为了确保一切正常，我们可以在Docker构建过程中添加自动验证逻辑。</p>
+<p>这是一个简单的例子，实践了上述提到的技巧。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Cpp/Date/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../IDE/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Cpp/Date/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../IDE/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>
